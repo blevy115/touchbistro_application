@@ -10,7 +10,7 @@ function App(props) {
             number
           }
         })
-        setResult(response.data.double);
+        setResult(response.data.result);
         setPhrase("There's the Median Prime, enter another number to try again.");
       } catch (err) {
         setPhrase('something went wrong');
