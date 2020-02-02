@@ -5,6 +5,11 @@ import './App.css';
 function App(props) {
   const mathAPI = async (number) => {
       try {
+        if (number > 100000000) {
+          setPhrase('Number too large, try a smaller number');
+          return;
+        }
+        if (number > 1000000) setPhrase("Calculating...");
         const response = await connect.get('/findMedianPrime', {
           params: {
             number
@@ -19,7 +24,7 @@ function App(props) {
 
   const [phrase, setPhrase] = useState('');
   const [number, setNumber] = useState('');
-  const [result, setResult] = useState('Make a search');
+  const [result, setResult] = useState('');
 
   useEffect(() => {
     setPhrase('Welcome, Please Enter a number, we will find the Median Prime Number less than it.')
