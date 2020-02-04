@@ -15,8 +15,13 @@ function App(props) {
             number
           }
         })
-        setResult(response.data.result);
-        setPhrase("There's the Median Prime, enter another number to try again.");
+        if (response.data.error){
+          setPhrase(response.data.error);
+          setResult('');
+        } else {
+          setResult(response.data.result);
+          setPhrase("There's the Median Prime, Enter another number to try again.");
+        }
       } catch (err) {
         setPhrase('Something went wrong');
       }
@@ -49,6 +54,7 @@ function App(props) {
           type="submit"
           name="submit"
           aria-label="submit"
+          disabled={!number}
         >Find My Prime</button>
       </form>
       { result ? <p aria-label="result">{result}</p> : null }
