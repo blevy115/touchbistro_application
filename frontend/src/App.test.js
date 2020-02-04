@@ -16,8 +16,7 @@ test('renders input field with 0 on load', () => {
 });
 
 test('correct result should appear when number entered and button clicked', async () => {
-  const url = '/findMedianPrime'
-  const{ getByLabelText } = render(<App url={url}/>);
+  const{ getByLabelText } = render(<App />);
   const input = getByLabelText('number')
   const submit = getByLabelText('submit')
   fireEvent.change(input, { target: {value: 20 } });
