@@ -18,7 +18,7 @@ function App(props) {
         setResult(response.data.result);
         setPhrase("There's the Median Prime, enter another number to try again.");
       } catch (err) {
-        setPhrase('something went wrong');
+        setPhrase('Something went wrong');
       }
     }
 

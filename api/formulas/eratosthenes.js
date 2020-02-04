@@ -1,4 +1,3 @@
-// grabbed from https://stackoverflow.com/questions/15471291/sieve-of-eratosthenes-algorithm-in-javascript-running-endless-for-large-number
 const eratosthenes = (n) => {
     // Eratosthenes algorithm to find all primes under n
     const array = [], upperLimit = Math.sqrt(n), output = [];
