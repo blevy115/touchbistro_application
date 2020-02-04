@@ -37,10 +37,21 @@ function App(props) {
         event.preventDefault()
         mathAPI(number)
       }}>
-        <input type="number" name="number" value={number} onChange={inputField=> setNumber(inputField.target.value)}/>
-        <button tupe="submit">Find My Prime</button>
+        <input
+          placeholder="Enter Number"
+          type="number"
+          name="number"
+          aria-label="number"
+          value={number}
+          onChange={inputField=> setNumber(inputField.target.value)}
+        />
+        <button
+          type="submit"
+          name="submit"
+          aria-label="submit"
+        >Find My Prime</button>
       </form>
-      <p>{result}</p>
+      { result ? <p aria-label="result">{result}</p> : null }
     </div>
   );
 }
