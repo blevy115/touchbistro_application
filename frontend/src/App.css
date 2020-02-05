@@ -1,10 +1,15 @@
 .App {
   text-align: center;
   border: 1px solid black;
+  border-radius: 5px;
   max-width:50%;
   margin: 25px auto 0 auto;
+  min-height: 200px;
 }
 
+input {
+  font-size:18px;
+}
 
 body {
   background-color: lightgrey
@@ -13,4 +18,10 @@ body {
 button {
   display:block;
   margin: 20px auto;
+  font-size: 18px;
+  border-radius: 7px
+}
+
+#result {
+  font-weight: 500
 }
