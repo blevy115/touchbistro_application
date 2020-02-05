@@ -27,6 +27,14 @@ describe('Unsuccesful Data return', () => {
       expect(res.body).toHaveProperty('error');
       expect(res.body.error).toBe('Please Enter an Integer');
   });
+
+  it('Should return an error if no number', async () => {
+    const res = await request(app)
+      .get('/findMedianPrime');
+      expect(res.statusCode).toEqual(200);
+      expect(res.body).toHaveProperty('error');
+      expect(res.body.error).toBe('Please Enter a Number');
+  });
 });
 
 describe('Unseccesful pathway', () => {
