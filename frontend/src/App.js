@@ -37,7 +37,7 @@ function App(props) {
 
   return (
     <div className="App">
-      <p>{phrase}</p>
+      <p aria-label="phrase">{phrase}</p>
       <form onSubmit={(event) => {
         event.preventDefault()
         mathAPI(number)

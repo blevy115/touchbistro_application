@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, wait } from '@testing-library/react';
+import { render, fireEvent, wait, waitForDomChange } from '@testing-library/react';
 import App from './App';
 import '@testing-library/jest-dom/extend-expect'
 
@@ -25,4 +25,15 @@ test('correct result should appear when number entered and button clicked', asyn
   const result = getByLabelText('result')
   expect(result).toBeInTheDocument();
   expect(result).toHaveTextContent('7 and 11')
+})
+
+test('Error Message should appear when not an integer', async () => {
+  const{ getByLabelText } = render(<App />);
+  const input = getByLabelText('number')
+  const submit = getByLabelText('submit')
+  const phrase = getByLabelText('phrase')
+  fireEvent.change(input, { target: {value: 20.5 } });
+  fireEvent.click(submit)
+  await waitForDomChange({ phrase })
+  expect(phrase).toHaveTextContent('Please Enter an Integer');
 })
