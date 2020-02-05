@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "concurrently \"npm run server\" \"cd ../frontend && npm start\"",
-    "server": "node ./bin/www"
+    "server": "node ./bin/www",
+    "test": "jest"
   },
   "dependencies": {
     "concurrently": "^5.1.0",
@@ -15,5 +16,15 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
