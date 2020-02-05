@@ -19,3 +19,7 @@ npm install
 Once complete run `npm start`, this will start both the frontend and api on localhost:3000 and localhost:3000
 
 #### From here the Median Prime Finder will be running.
+
+## Testing
+
+To run Front-End test once the server is running cd into the frontend directore and run `npm test`
