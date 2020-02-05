@@ -48,7 +48,7 @@ function App(props) {
           name="number"
           aria-label="number"
           value={number}
-          autocomplete="off"
+          autoComplete="off"
           onChange={inputField=> setNumber(inputField.target.value)}
         />
         <button
